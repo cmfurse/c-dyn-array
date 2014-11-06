@@ -7,8 +7,8 @@
 // STRUCTURE FOR DYNAMICALLY RESIZING ARRAY
 typedef struct dyn_array                                                        
 {
-    void *array;                                                                    
-	int   count;        // number of elements
+	void *array;                                                                    
+    int   count;        // number of elements
     int   maxobj;       // max elements that have been allocated
     int   objsiz;       // size of each object
 } DYN_ARRAY;
