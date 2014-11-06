@@ -1,4 +1,4 @@
-#ifdef DYNARRAY
+#ifndef DYNARRAY
 #define DYNARRAY
 
 #define INIT_ARRAY_SIZ  64                                                      

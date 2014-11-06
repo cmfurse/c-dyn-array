@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 #include "dynarray.h"
 
 void init_array(DYN_ARRAY *ar, int objsiz)

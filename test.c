@@ -2,6 +2,10 @@
 #include <string.h>
 #include "dynarray.h"
 
+void print_array(DYN_ARRAY *arrayPtr);
+int compare_intval(const void *t1, const void *t2);
+int compare_name(const void *t1, const void *t2);
+
 typedef struct node
 {
 	char name[16];
@@ -23,11 +27,11 @@ int main(void)
 	NODE node4 = { .name = "node4", .description = "I am node #4", .intval = 1 };
 	NODE node5 = { .name = "node5", .description = "I am node #5", .intval = 11 };
 	
-	add_to_array(&array, node1);
-	add_to_array(&array, node2);
-	add_to_array(&array, node3);
-	add_to_array(&array, node4);
-	add_to_array(&array, node5);
+	add_to_array(&array, &node1);
+	add_to_array(&array, &node2);
+	add_to_array(&array, &node3);
+	add_to_array(&array, &node4);
+	add_to_array(&array, &node5);
 	
 	print_array(&array);
 	
@@ -49,7 +53,7 @@ int main(void)
 	print_array(&array);
 	
 	clear_array(&array);
-	printf("array length after clear is: %d", array.count);
+	printf("array length after clear is: %d\n", array.count);
 	
 	// free the memory in the array
 	free_array(&array);
@@ -87,5 +91,5 @@ int compare_intval(const void *t1, const void *t2)
 // SORT BY NAME
 int compare_name(const void *t1, const void *t2)
 {
-    return strcmp(((NODE *)t1)->name,((ORDER *)t2)->name);
+    return strcmp(((NODE *)t1)->name,((NODE *)t2)->name);
 }
